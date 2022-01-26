@@ -1,4 +1,4 @@
-//Cấu trúc điều khiển switch.
+//Cấu trúc điều khiển switch
 
 #include <iostream>
 

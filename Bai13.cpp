@@ -1,3 +1,5 @@
+//Sử dụng auto keyboard
+
 #include <iostream>
 
 using namespace std;

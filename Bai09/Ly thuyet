@@ -7,11 +7,14 @@ Bài 09: Cấu trúc điều khiển if-else
   + Nếu muốn chương trình chỉ thực hiện khi điều kiện được thỏa mãn. Dùng cấu trúc if đơn.
   + Nếu muốn khi điều kiện thỏa mãn, thực hiện phương án A. Ngược lại, thực hiện phương án B, ta dùng cấu trúc if-else.
   + Nếu có nhiều hơn 2 phương án để thực hiện và các phương án mang tính loại trừ nhau, dùng if-else-if.
-- Cú pháp tổng quát
+  
+2,Cú pháp tổng quát
+
  if (điều_kiện) {
      // các câu lệnh cần thực hiện
  }
-Trong đó:
+ 
+- Trong đó:
   + Luôn bắt đầu cấu trúc này với từ khóa if
   + Theo sau if là cặp ngoặc tròn ( ) và trong đó chứa điều kiện cần đánh giá
   + Điều_kiện là các điều kiện cần thỏa mãn để các câu lệnh trong phần thân if của được thực hiện.

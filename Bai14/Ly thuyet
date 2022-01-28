@@ -1,0 +1,28 @@
+Bài 14: Toán tử so sánh ba chiều
+
+1, Toán tử so sánh ba chiều
+- Có tên tiếng Anh là three-way comparision operator hoặc spaceship operator
+- Dùng để so sánh hai toán hạng và rút ra kết luận hai toán hạng đó có mối quan hệ với nhau như thế nào
+- Thường dùng để so sánh hai toán hạng có kiểu số với nhau
+
+2,Cú pháp tổng quát
+
+left_operand <=> right_operand
+
+- Trong đó:
+  + Để sử dụng được toán tử so sánh ba chiều, ta add thư viện <compare> và add ngôn ngữ C++ 20 trở lên
+  + Hai toán hạng trái và phải thường cùng kiểu
+  + Giữa hai toán hạng là toán tử so sánh ba chiều <=>
+- Kết quả của phép so sánh như sau:
+  + (a <=> b) < 0 nếu a < b
+  + (a <=> b) > 0 nếu a > b
+  + (a <=> b) == 0 nếu a và b tương đương
+- Nếu hai toán hạng trái phải cùng kiểu nguyên thì kết quả trả về sẽ là:
+  + std::strong_ordering::less nếu toán hạng trái nhỏ hơn toán hạng phải
+  + std::strong_ordering::greater nếu toán hạng trái lớn hơn toán hạng phải
+  + std::strong_ordering::equal nếu toán hạng trái bằng với toán hạng phải
+- Nếu một toán hạng hoặc cả hai ở kiểu số thực thì kết quả trả về sẽ là:
+  + std::partial_ordering::less nếu toán hạng trái nhỏ hơn toán hạng phải
+  + std::partial_ordering::greater nếu toán hạng trái lớn hơn toán hạng phải
+  + std::partial_ordering::equivalent nếu toán hạng trái tương đương toán hạng phải
+  + std::partial_ordering::unordered không có thứ tự(ví dụ NaN <=> giá trị bất kì là không có thứ tự)

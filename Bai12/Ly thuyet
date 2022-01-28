@@ -1,0 +1,37 @@
+Bài 12: Toán tử ba ngôi, toán tử logic
+
+1, Toán tử logic
+- Toán tử logic dùng để kết hợp các điều kiện lại với nhau.
+- Toán tử logic gồm các toán tử &&, ||, !
+- Trong đó && và || là toán tử hai ngôi
+- ! là toán tử một ngôi
+- Toán tử đồng thời &&:
+  + Thứ tự ưu tiên thực hiện biểu thức là từ trái qua phải
+  + Hai toán hạng trái phải yêu cầu phải có tính đúng sai, hay nói cách khác chúng thường ở kiểu bool
+  + Toán hạng phải chỉ được đánh giá khi và chỉ khi toán hạng trái là true
+  + Kết quả của && là true khi và chỉ khi hai toán hạng trái phải cùng true, ngược lại kết quả là false(thường đại diện bởi 1 và 0 để tương thích với ngôn ngữ C)
+- Toán tử hoặc ||:
+  + Thứ tự ưu tiên thực hiện biểu thức là từ trái qua phải
+  + Hai toán hạng trái phải của toán tử này yêu cầu ở kiểu bool
+  + Toán hạng phải chỉ được đánh giá nếu toán hạng trái là false
+  + Kết quả thu được chỉ false khi cả hai toán hạng trái phải cùng false, ngược lại ta được kết quả true
+- Toán tử phủ định !:
+  + Toán tử ! đứng trước một toán hạng có kiểu bool để phủ định giá trị của toán hạng đó
+  + Kết quả của biểu thức ở kiểu bool
+  + Nếu x là true thì !x cho giá trị false
+  + Nếu x là false thì ! cho giá trị true
+  
+2, Toán tử ba ngôi
+- Toán tử ba ngôi hay còn có tên là conditional operator, ternary operator.
+- Mục đích sử dụng của toán tử ba ngôi là làm cho câu lệnh trở nên ngắn gọn trên một dòng.
+- Thường sử dụng khi các điều kiện là đơn giản hoặc muốn thay thế cho việc sử dụng cấu trúc if-else.
+- Việc sử dụng cấu trúc if-else hay toán tử ba ngôi là do bạn lựa chọn.
+- Sau đây là cú pháp tổng quát:
+
+(biểu_thức) ? giá_trị_1 : giá_trị_2;
+
+- Trong đó:
+  + Biểu thức trong ngoặc tròn là một biểu thức có tính đúng hoặc sai.
+  + Nếu biểu thức trong () là true thì giá trị sau dấu ? sẽ được sử dụng.
+  + Ngược lại giá trị sau dấu : sẽ được sử dụng.
+- Khi sử dụng cú pháp trên trong phép gán giá trị cho một biến, ta đặt chúng ở vế phải của phép gán.

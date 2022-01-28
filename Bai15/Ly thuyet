@@ -1,0 +1,28 @@
+//Bai15: Cấu trúc lặp for
+
+1, Mục đích sử dụng
+- Sử dụng để lặp lại 1 công việc hoặc đoạn chương trình
+- Có 2 loại vòng lặp:
+  + Vòng lặp có biến kiểm soát lặp(biết trước số lần lặp): for
+  + Vòng lặp không có biến kiểm soát lặp: while, do-while
+- Vòng lặp có biến kiểm soát lặp thường được sử dụng trong trường hợp biết trước số lần lặp.
+- Vòng lặp không có biến kiểm soát lặp thường được sử dụng khi không biết trước số lần lặp.
+  Để kiểm soát vòng lặp loại này ta dựa vào giá trị tính toán được/kết quả nhận được trong quá trình thực hiện lặp.
+
+2,Cú pháp tổng quát
+
+for (khởi_tạo; điều_kiện; bước_nhảy) {
+    // nội dung cần lặp
+
+}
+
+- Trong đó:
+  + Vòng lặp for bắt đầu với keyword for.
+  + Theo sau đó là cặp ngoặc tròn chứa các thành phần kiểm soát vòng lặp phân tách nhau bởi dấu chấm phẩy.
+  + Phần khởi_tạo dùng để khởi tạo giá trị cho biến kiểm soát lặp. Phần này được thực hiện đầu tiên, trước khi vòng lặp bắt đầu và chỉ được thực hiện duy nhất một lần. Biến kiểm soát lặp thường đặt là i(index) , j, k.
+  + Phần điều_kiện là nơi kiểm tra đánh giá xem điều kiện lặp có thỏa mãn hay không. Nếu điều kiện lặp là true thì thân vòng lặp sẽ được thực hiện. Ngược lại vòng lặp kết thúc
+  + Phần bước_nhảy: là nơi thay đổi giá trị cho biến kiểm soát lặp. Việc thay đổi có thể là tăng, giảm giá trị một lượng nào đó tùy theo ngữ cảnh của bài toán.
+  + Bước nhảy thường thay đổi theo hướng làm cho giá trị của biến kiểm soát lặp tiến đến giá trị làm cho điều kiện lặp không còn thỏa mãn.
+  + Phần thân vòng lặp nằm trong cặp ngoặc {} chứa các câu lệnh cần thực hiện.
+- Nếu điều kiện lặp luôn đúng thì vòng lặp sẽ lặp vô hạn. Do vậy ta cần chú ý điều kiện lặp.
+- Khi bạn thấy vòng lặp không kết thúc bình thường thì hãy đảm bảo điều kiện lặp là hợp lệ, bước nhảy sử dụng đúng ngữ cảnh.

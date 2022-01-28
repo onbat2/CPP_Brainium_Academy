@@ -1,0 +1,43 @@
+Bài 11: Cấu trúc điều khiển switch
+
+1, Mục đích sử dụng
+- Sử dụng cấu trúc switch khi một biểu thức nào đó có nhiều hơn 1 trường hợp cần đánh giá. Các biểu thức của cấu trúc này thường là các hằng số, các kiểu nguyên.
+- Như vậy:
+  + Nếu một biểu thức chỉ có hoặc đúng hoặc sai ta dùng cấu trúc if
+  + Nếu một biểu thức cần đối chiếu với nhiều giá trị khác nhau, ta dùng cấu trúc switch
+- VD: Xét về tên ngày trong tuần, có tới 7 khả năng xảy ra: từ thứ Hai đến Chủ nhật.
+      Xét một mùa của năm, ta có 4 lựa chọn: xuân,hạ,thu,đông
+
+2, Cú pháp tổng quát
+- Sau đây là cú pháp tổng quát của cấu trúc switch:
+
+switch (biểu_thức) {
+    case giá_trị1:
+        // làm gì đó nếu trường hợp này xảy ra
+        break;
+    case giá_trị2:
+        // làm gì đó nếu trường hợp này xảy ra
+        break;
+    case giá_trị3:
+        // làm gì đó nếu trường hợp này xảy ra
+        break;
+    ...    
+    default:
+        // làm gì đó nếu tất cả các case phía trên không xảy ra
+}
+
+- Trong đó:
+  + Cấu trúc bắt đầu với từ khóa switch
+  + Kế tiếp là cặp ngoặc tròn ()
+  + Bên trong ngoặc tròn là biểu thức có tính chất nguyên, ví dụ biến kiểu nguyên( như char, short, int), hằng số, enum, string…
+  + Phần thân switch ở phía trong cặp ngoặc {}
+  + Mỗi case tương đương với 1 if
+  + Đi sau case là dấu cách, sau đó đến giá trị cần đối sánh và cuối cùng là dấu hai chấm.
+    Giá trị cần đối sánh phải cùng kiểu với kiểu của biểu thức trong switch.
+  + Nội dung cần thực hiện của mỗi case sẽ viết sau dấu hai chấm :
+  + Kết thúc mỗi case là từ khóa break. Nhiệm vụ của break là thoát khỏi cấu trúc switch khi thực hiện xong nhiệm vụ.
+    Nếu bạn quên break, các case liền dưới của case hiện tại sẽ được thực hiện cho dù case đó không thỏa mãn. 
+    Việc thực hiện khối switch sẽ chỉ dừng khi gặp break hoặc đến khi kết thúc khối switch.
+  + Tại mỗi thời điểm thường thì chỉ có một case của switch được thực hiện.
+  + Nếu sau khi tất cả các case được đánh giá mà không có case nào được thực hiện, khối default sẽ được thực hiện.
+    Kết thúc khối default không cần có break nhưng bạn có thể thêm vào. default luôn ở sau cùng cấu trúc switch.

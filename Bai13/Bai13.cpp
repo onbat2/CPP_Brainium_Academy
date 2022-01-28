@@ -1,3 +1,5 @@
+//Bai13: Sử dụng auto keyword
+
 #include <iostream>
 
 using namespace std;

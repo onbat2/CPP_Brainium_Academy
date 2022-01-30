@@ -1,0 +1,76 @@
+Bai18: Lệnh break, continue, vòng lặp lồng nhau
+
+1,Vòng lặp vô hạn
+- Vòng lặp mà lặp vô tận, không có điểm dừng gọi là vòng lặp vô hạn
+- Vòng lặp vô hạn xảy ra khi điều kiện lặp luôn đúng
+- Vòng lặp vô hạn có cả hai mặt lợi và hại.
+  Tuy vậy khi biết ứng dụng vào từng trường hợp cụ thể thì bạn sẽ tận dụng được những lợi thế của vòng lặp này.
+  + Mặt lợi là nó cho phép ta chạy chương trình đến vô thời hạn.
+    Điều này sẽ cho ta có cơ hội giám sát được thời điểm kết thúc của vòng lặp dựa trên một sự kiện nào đó.
+  + Mặt hại là nếu cứ chạy vô thời hạn mà không dừng, thì sẽ chiếm CPU, RAM, các thành phần phần cứng liên quan nào đó. 
+    Dẫn đến không có đủ tài nguyên để phục vụ các chương trình khác.
+- Các vòng lặp vô hạn thường sử dụng kèm với lệnh break để kết thúc lặp khi điều kiện nào đó xảy đến.
+- Loại vòng lặp này thường được sử dụng để kiểm soát dữ liệu đầu vào hoặc chờ đợi một sự kiện nào đó.
+
+- Hình ảnh các loại vòng lặp vô hạn:
+// vòng lặp for vô hạn
+for (;;) {
+    // các câu lệnh cần thực hiện
+}
+// vòng lặp while vô hạn
+while (true) {
+    // các câu lệnh cần thực hiện
+}
+// vòng lặp do-while vô hạn
+do {
+    // các câu lệnh cần thực hiện
+} while (true);
+
+2,Lệnh break
+- Khi nào cần chủ động thoát khỏi một cấu trúc, ví dụ cấu trúc lặp, cấu trúc switch, ta dùng break.
+- Lệnh break sẽ cho phép ta kết thúc sớm và bỏ qua các lần lặp hoặc đánh giá kế tiếp vì lúc này ta đã đạt được mục đích.
+  Do việc lặp tiếp hoặc đánh giá tiếp là dư thừa, không cần thiết.
+- Lệnh break sẽ thoát khỏi cấu trúc lặp hoặc switch gần nhất chứa nó. Không thoát hoàn toàn khỏi chương trình.
+- Khi gặp lệnh break, các lệnh phía dưới break(nếu có) và trong cùng khối với break sẽ không được thực hiện nữa.
+
+3,Lệnh continue
+- Khác với break, continue không làm chương trình thoát khỏi một khối nào khi gặp nó. 
+  Thực tế continue cho phép logic chương trình bỏ qua các lệnh ở phía dưới và cùng nằm trong thân vòng lặp với continue.
+- Continue thường áp dụng kết hợp với các cấu trúc điều khiển như ra quyết định hoặc lặp.
+
+4,Vòng lặp lồng nhau
+- Vòng lặp lồng nhau là vòng lặp chứa các vòng lặp khác. Các vòng lặp không nhất thiết phải cùng kiểu.
+- Phổ biến nhất ta thấy là for lồng for.
+- Mục đích chủ yếu của vòng lặp lồng nhau là để thực hiện các thao tác với mảng, các thao tác tìm kiếm, sắp xếp, thao tác trong hệ tọa độ n chiều…
+- Khuyến nghị không nên lồng quá nhiều vòng lặp vào nhau vì sẽ làm tăng độ phức tạp, làm chương trình chạy chậm, giảm hiệu năng và trải nghiệm người dùng.
+- Chi tiết về độ phức tạp thuật toán sẽ trình bày cụ thể trong Khóa học cấu trúc dữ liệu và giải thuật. Còn bây giờ các bạn hiểu đơn giản là:
+  + Nếu một vòng lặp đơn thì độ phức tạ thuật toán là O(n)
+  + Nếu hai vòng lặp lồng nhau thì độ phức tạp sẽ là O(n^2)
+  + Ba vòng lặp lồng nhau liên tiếp thì độ phức tạp là O(n^3).
+  
+- Cú pháp vòng lặp lồng nhau tổng quát như sau:
+
+Vòng lặp cấp 1 {
+    // nội dung vòng lặp cấp 1
+    Vòng lặp cấp 2 {
+        // nội dung vòng lặp cấp 2
+        Vòng lặp cấp 3 {
+            // nội dung vòng lặp cấp 3
+            …
+        }
+    }
+}
+
+- Trong đó:
+  + Mỗi vòng lặp được đánh dấu lần lượt là vòng lặp cấp i, ví dụ cấp 1, cấp 2.
+  + Các vòng lặp lồng nhau không nhất thiết phải cùng loại.
+  + Vòng lặp cấp nhỏ hơn sẽ chứa tất cả các vòng lặp con bên trong có cấp cao hơn nó.
+  + Ngoài việc chứa vòng lặp khác thì thân các vòng lặp còn có thể chứa các câu lệnh bình thường khác.
+  + Các cấu trúc ra quyết định cũng có thể lồng nhau.
+- Ví dụ sau là 2 vòng for lồng nhau:
+
+for (int i = 0; i < m; i++) {
+    for (int j = 0; j < n; j++) {
+        // làm gì đó
+    }
+}

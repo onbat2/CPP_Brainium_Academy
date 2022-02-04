@@ -1,0 +1,137 @@
+Bài 21: Tổng quan về hàm
+
+1,Khái niệm, mục đích sử dụng
+- Các phần mềm thường có hàng nghìn dòng code hoặc hơn.
+  Do đó rất khó để bảo trì, mở rộng nếu không chia nhỏ phần mềm thành nhiều phần nhỏ hơn để dễ dàng quản lý. 
+  Vì vậy hàm đã ra đời.
+- Hàm là tập hợp của một nhóm các câu lệnh cùng thực hiện trọn vẹn một chức năng, được đặt dưới một tên chung và có dấu hiệu nhận biết cụ thể.
+- Mỗi hàm có kiểu hàm, tên hàm, các tham số của hàm và phần thân hàm.
+- Ví dụ các hàm mà chúng ta đã sử dụng: hàm main(), hàm tính căn bậc hai sqrt(), …
+- Ngoài ra chúng ta có thể tự định nghĩa hàm theo nhu cầu sử dụng của chúng ta. Đây là phần chúng ta đang hướng đến.
+
+2,Cú pháp tổng quát
+
+kiểu_hàm tên_hàm(danh_sách_tham_số) {
+    // Nội dung cần thực hiện
+} // end function
+
+Trong đó:
+
+- kiểu_hàm của hàm hay còn gọi là kiểu trả về của hàm, có thể là bất kì kiểu dữ liệu hợp lệ nào trong ngôn ngữ C++. 
+  Ví dụ int, float… và kiểu void – tức không trả về gì cả.
+- tên_hàm là tên của hàm. Tên hàm thường là động từ. 
+  Trừ một số hàm đặc trưng theo ngữ cảnh và nghiệp vụ ra thì khi đặt tên hàm luôn dùng động từ. 
+  Tên hàm thể hiện chức năng mà hàm đảm nhiệm. Ví dụ: eat, kill, substract, takeDamage…
+- Tên hàm không chứa các kí tự đặc biệt như * & /
+- Nếu tên hàm là dài, kí tự đầu từ kể từ từ thứ hai trở đi luôn viết hoa, ví dụ: getUserInput
+- Sau tên hàm là cặp () chứa tham số bên trong. Đây là dấu hiệu nhận biết tên hàm.
+- danh_sách_tham_số là các biến dùng để nhận giá trị truyền vào khi gọi hàm. 
+  Một hàm có thể có 0, 1 hoặc nhiều tham số. Nếu có nhiều tham số thì phân tách nhau bằng dấu phẩy.
+- Phần thân hàm bên trong cặp ngoặc nhọn {} chứa các câu lệnh cùng thực hiện trọn vẹn chức năng của hàm. 
+  Lưu ý rằng các câu lệnh của một hàm luôn tuân thủ quy ước thực hiện cùng một nhiệm vụ. 
+  Không viết nhiều chức năng khác nhau trong cùng 1 hàm. Ví dụ hàm thực hiện tính tổng chỉ tính tổng, không tính trừ, nhân chia…
+  
+  3,Hàm trả về và không trả về
+- Khi sử dụng hàm ta thường có 2 thao tác:
+  + Định nghĩa và khai báo hàm, tức khai báo nguyên mẫu và viết mã thực thi chi tiết của hàm theo các quy ước ở trên.
+  + Sử dụng hàm hay thực hiện lời gọi hàm.
+- Hàm trả về là hàm cung cấp cho nơi gọi nó một giá trị. Nói cách khác, là việc đáp lại lời gọi hàm nào đó bằng một giá trị cụ thể theo mục đích của hàm.
+- Hàm trả về có kiểu khác void. Tức là kiểu của hàm có thể là int, float, char, bool, …
+- Sau khi thực hiện nhiệm vụ, hàm trả về sẽ gửi trả cho nơi gọi nó một giá trị cùng kiểu với kiểu của hàm đó qua keyword return.
+- Vi du:
+
+// hàm tính và trả về tổng hai số nguyên a và b
+int add(int a, int b) {
+    return a + b; // dấu hiệu nhận biết một hàm có trả về
+} // end function
+
+// khi gọi hàm, kết quả sẽ được thực hiện và gửi lại cho nơi gọi nó:
+int result = add(5, 9); // gọi hàm và truyền vào hai đối số, kết quả nhận được gán cho biến result
+
+- Hàm không trả về là các hàm có kiểu void.
+- Các hàm này sau khi thực hiện nhiệm vụ thì không cần thông báo kết quả cho nơi gọi nó.
+- Sử dụng hàm trả về khi kết quả của hàm là đầu vào để tiếp tục thực hiện các chức năng khác trong chương trình.
+- Sử dụng hàm không trả về khi kết quả thực hiện của hàm không tiếp tục được sử dụng nữa.
+- Ví dụ:
+
+// hàm in kết quả sau khi in thì xong nhiệm vụ không cần trả về
+void showResult(int res) {
+    cout << "Result = " << res << endl;
+}
+
+3,Tham số, đối số
+- Tham số là các biến được khai báo trong cặp ngoặc tròn () của hàm. Ví dụ:
+
+// hàm tính và trả về tổng hai số nguyên 
+int add(int a, int b) { // tham số a, b kiểu int
+    return a + b; 
+} // end function
+
+- Tham số thường là các biến, đôi khi là hằng số để nhận giá trị được truyền vào hàm khi gọi hàm.
+- Đối số là thứ truyền vào hàm khi thực hiện lời gọi hàm.
+- Đối số có thể là các biến, các hằng số, giá trị cụ thể hoặc một hàm khác…
+- Ví dụ về đối số:
+
+int a = 5;
+int b = 6;
+int sum = add(a, b); // a, b là đối số
+int sum2 = add(3, a); // 3, a là đối số
+const int MAX = 100;
+int sum3 = add(MAX, b); // MAX, b là đối số
+
+- Số lượng, thứ tự và kiểu của tham số và đối số phải tương ứng nhau. 
+  Nếu không chương trình sẽ không chạy được hoặc chạy được nhưng kết quả sai.
+- Tên tham số và đối số không nhất thiết phải giống nhau.
+- Khi gọi hàm, giá trị của đối số thứ nhất sẽ truyền cho tham số thứ nhất trong định nghĩa hàm. 
+  Giá trị của đối số thứ hai truyền cho tham số thứ hai.. tương tự đến hết.
+  
+4,Nạp chồng hàm
+- Một chức năng nào đó có thể được áp dụng cho nhiều bộ tham số đầu vào khác nhau.
+- Ví dụ tính diện tích: cùng là tính diện tích, nhưng có thể là diện tích hình tam giác, hình vuông, hình tròn… 
+  Mỗi hình có một cách tính riêng nhưng cùng là tính diện tích.
+- Lúc này ta cần thực hiện việc nạp chồng hàm. Quy tắc nạp chồng: giữ nguyên tên hàm, thay đổi bộ tham số.
+- Lưu ý việc nạp chồng không được chấp nhận nếu hai hàm nạp chồng chỉ khác nhau kiểu trả về của hàm.
+- Ví dụ sau minh họa những điều trên:
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+double area(double radius) { // tính diện tích hình tròn
+    return 3.14 * radius * radius;
+}
+
+double area(double width, double height) { // tính diện tích hình chữ nhật
+    return width * height;
+}
+
+double area(double a, double b, double c) { // tính diện tam giác
+    double p = 0.5 * (a + b + c);
+    double x = p * (p - a) * (p - b) * (p - c);
+    return sqrt(x);
+}
+
+int main() {
+    double radius = 3.25;
+    double width = 20;
+    double height = 36;
+    long a = 5;
+    long b = 3;
+    long c = 4;
+    cout << "Dien tich tam giac: " << area(a, b, c) << endl;
+    cout << "Dien tich hinh chu nhat: " << area(width, height) << endl;
+    cout << "Dien tich hinh tron: " << area(radius) << endl;
+    return 0;
+}
+// đoạn code sau sẽ bị lỗi do hai hàm chỉ khác nhau kiểu trả về của hàm
+
+
+double area(double radius) { // tính diện tích hình tròn
+    return 3.14 * radius * radius;
+}
+
+// lỗi nạp chồng không thể chỉ khác nhau mỗi kiểu trả về của hàm
+long area(double radius) {
+    return 3.14 * radius * radius;
+}
+

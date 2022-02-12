@@ -1,1 +1,46 @@
+Bài 49. Lớp và đối tượng
 
+1,Định nghĩa
+- Lớp là một kiểu dữ liệu người dùng tự định nghĩa.
+- Một lớp có thể chứa cả dữ liệu và hành động liên quan đến các dữ liệu đó.
+- Nói cách khác, một lớp là bản thiết kế mà sản phẩm tạo ra từ bản thiết kế đó được gọi là các đối tượng.
+- Dễ hình dung hơn, coi lớp là khuôn làm bánh thì đối tượng của nó là những chiếc bánh được tạo ra từ cái khuôn đó.
+- Các đối tượng được tạo ra từ một lớp có chung các hành vi và đặc điểm nhận biết.
+
+2,Đặc điểm
+- Dữ liệu của lớp là các biến khai báo trong lớp đó, nó được gọi là các thuộc tính.
+- Hàm thành phần của lớp là các hàm khai báo trong lớp đó, nó gọi là các phương thức của lớp. 
+  Phương thức liên quan đến hành động của lớp.
+- Các phương thức của một lớp thường được vận hành dựa trên các thuộc tính của lớp.
+- Khi một lớp được tạo ra, chưa có sự cấp phát bộ nhớ nào nhưng khi đối tượng được tạo ra,
+  nó sẽ được cấp phát bộ nhớ để thực hiện các chức năng cần thiết.
+  
+3,Cú pháp khai báo tổng quát
+- Sau đây là cú pháp tổng quát khai báo một lớp:
+
+class ClassName {
+accessSpecifier1:
+     member1a;
+     member1b;
+     ...
+accessSpecifier2:
+     member2a;
+     member2b;
+     ...
+} objectNames;
+
+- Trong đó:
+  + Một lớp bắt đầu với keyword class theo sau đó là tên lớp
+  + ClassName là tên lớp, thường là danh từ hoặc cụm danh từ chỉ tên của thực thể nào đó mà lớp muốn mô tả
+  + accessSpecifier1, 2 là các chỉ định truy cập. Nó có thể là private, public hoặc protected..
+  + member1a,… là các thành phần dữ liệu hoặc hành động của lớp
+  + objectName: Có thể khai báo các đối tượng của lớp ngay khi khai báo lớp, 
+    chúng sẽ là các đối tượng tương tự biến toàn cục(không khuyến khích)
+  + Kết thúc khai báo lớp là dấu chấm phẩy(bắt buộc)
+  
+4,Phân tách khai báo và định nghĩa
+- Ta có thể phân tách việc khai báo nguyên mẫu hàm và định nghĩa hàm thành phần của lớp.
+- Tại nơi khai báo, bên trong phần thân của lớp: chỉ cung cấp nguyên mẫu hàm.
+- Tại nơi định nghĩa: định nghĩa chi tiết hành vi cần thực hiện của hàm.
+- Do việc định nghĩa hàm ở ngoài lớp nên sau kiểu của hàm và trước tên hàm 
+  ta có ClassName:: với ClassName là tên lớp chứa khai báo nguyên mẫu hàm.

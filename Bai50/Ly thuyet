@@ -1,0 +1,83 @@
+Bài 50: Hàm khởi tạo, hàm hủy
+
+1, Mục đích và đặc điểm hàm khởi tạo
+- Mục đích của hàm tạo là để khởi tạo dữ liệu cho đối tượng
+- Hàm tạo là một hàm thành phần đặc biệt của lớp
+- Hàm tạo được gọi khi ta tạo đối tượng
+- Đặc điểm của hàm khởi tạo:
+  + Cùng tên với tên lớp
+  + Không có kiểu trả về
+  + Tự động được gọi khi tạo đối tượng
+  + Mỗi lớp có một hàm tạo mặc định không tham số
+
+2, Mục đích và đặc điểm hàm hủy
+- Mục đích của hàm hủy là để xóa hay hủy bỏ đối tượng
+- Các đặc điểm của hàm hủy:
+  + Cùng tên với tên lớp và có dấu ~ ở đầu
+  + Tự động được gọi khi đối tượng bị hủy
+  + Không thể khai báo hàm hủy là const hay static
+  + Không có tham số
+  + Không có kiểu trả về
+  + Là thành phần public
+  + Chương trình không thể truy cập vào địa chỉ của hàm hủy
+
+3, Nạp chồng hàm khởi tạo
+- Theo mặc định khi ta tạo ra một lớp, một hàm tạo mặc định không tham số cũng được tạo ra
+- Để gọi hàm tạo không tham số, ta không dùng cặp () để gọi mà chỉ cần tên kiểu và tên đối tượng
+- Hàm tạo cũng có thể nạp chồng như các hàm khác để nhận vào các bộ tham số khác nhau
+- Khi ta tạo ra các hàm tạo có tham số, hàm tạo mặc định sẽ bị ẩn đi 
+  nên nếu muốn sử dụng cả hàm tạo mặc định, ta phải khai báo nó tường minh
+- Tùy theo nhu cầu và những thông tin hiện có ta gọi các hàm khởi tạo đã nạp chồng với các bộ đối số khác nhau
+
+4, Cú pháp khởi tạo đồng nhất:
+- Khi gọi hàm tạo bằng cặp ngoặc tròn gói danh sách đối số bên trong, ta đang gọi hàm theo cách có tên là functional form(dạng thức gọi chức năng, hàm)
+- C++ cho phép gọi hàm tạo bằng cú pháp mới gọi là uniform initialization: thay () bởi {}
+- Cú pháp: với hàm tạo 1 tham số, ta có thể viết:
+  + className objectName = initValue; hoặc
+  + className objectName = {initValue}; hoặc
+  + className objectName {initValue};
+- Cú pháp: với hàm tạo nhiều tham số, ta có thể viết:
+  + className objectName = {initValue1, initValue2, …}; hoặc
+  + className objectName {initValue1, initValue2, …};
+
+5, Khởi tạo dữ liệu thành phần trong hàm tạo
+- Thay vì gán trực tiếp giá trị trong phần thân của hàm tạo, 
+  ta có thể khởi tạo từng phần cho thành phần dữ liệu của lớp sử dụng dấu hai chấm và cặp () hoặc {}
+- Ví dụ hàm khởi tạo gốc:
+
+Cat(string name, int age) {
+    this->name = name;
+    this->age = age;
+}
+
+- Được viết thành:
+Cat(string name, int age) : name{ name }, age{ age } {}
+
+Hoặc:
+Cat(string name, int age) : name(name), age(age) {}
+
+- Ví dụ đầy đủ lớp Cat:
+class Cat {
+public:
+    string name;
+    int age;
+    string favoriteFood;
+    string color;
+    Cat() { // hàm khởi tạo
+        age = 0;
+        name = "";
+        favoriteFood = "";
+        color = "";
+    }
+
+    Cat(string name) : name{ name } {}
+
+    Cat(string name, int age) : name{ name }, age{ age } {}
+
+    Cat(string name, int age, string fFood) : 
+        name{ name }, age{ age }, favoriteFood{ fFood } {}
+
+    Cat(string name, int age, string fFood, string color) :
+        name{ name }, age{ age }, favoriteFood{ fFood }, color{ color } {}
+//...
+};

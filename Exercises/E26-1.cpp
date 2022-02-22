@@ -23,10 +23,10 @@ int main(){
     cout << "Nhap so nguyen n: " << endl;
     cin >> n;
     if(n >= 0 && n <= 22) {
-        cout << UINT_LEAST64_MAX << endl;
         //giá trị tối đa có thể lưu trữ của kiểu ULL
         unsigned long long f = factorial(n);
         cout << f << endl;
+        cout << UINT_LEAST64_MAX << endl;
     }
     else {
         cout << "INVALID" << endl;

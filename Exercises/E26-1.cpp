@@ -1,4 +1,5 @@
-/*Bài1: Tính n! với n nguyên dương không quá 22.
+/*
+Bài1: Tính n! với n nguyên dương không quá 22.
    - Input: một dòng chứa số nguyên dương n.
    - Output: in ra n! hoặc INVALID nếu n < 0 Hoặc n > 22.
 */

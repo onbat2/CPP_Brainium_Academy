@@ -8,8 +8,7 @@ Bài3: Nhập vào 2 số nguyên a, b. Hãy so sánh và đưa ra kết luận 
 using namespace std;
 
 int main(){
-    int a;
-    int b;
+    int a, b;
     cout << "Nhập vào 2 số nguyên a, b: ";
     cin >> a >> b;
     if(a > b){

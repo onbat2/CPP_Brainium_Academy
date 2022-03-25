@@ -16,4 +16,5 @@ int main(){
     }else{
         cout << n << " là số lẻ" << endl;
     }
+    return 0;
 }

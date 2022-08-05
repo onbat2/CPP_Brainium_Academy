@@ -1,8 +1,4 @@
-//Bài38: Con trỏ với keyword const
-
 #include <iostream>
-
-using namespace std;
 
 #define SIZE 20
 
@@ -16,34 +12,34 @@ int main(){
     int n;
 
     getArrayElements(arr, n);
-    cout << "Array elements: " << endl;
+    std::cout << "Array elements: " << "\n";;
     showArrayElements(arr, n);
 
     sort(arr, n);
-    cout << "Array elements after sort ASC: " << endl;
+    std::cout << "Array elements after sort ASC: " << "\n";
     showArrayElements(arr, n);
     return 0;
 }
 
 //hàm nhập dữ liệu vào
 void getArrayElements(int* const arr, int& size){
-    cout << "Enter array size > 0: ";
-    cin >> size;
+    std::cout << "Enter array size > 0: ";
+    std::cin >> size;
     if(size > 0){
         for(int i = 0; i < size; i++){
-            cin >> *(arr + i);
+            std::cin >> *(arr + i);
         }
     } else{
-        cout << "ERROR";
+        std::cout << "ERROR";
     }
 }
 
 //hàm hiển thị ra màn hình
 void showArrayElements(const int* const arr, int const size){
     for(int i = 0; i < size; i++){
-        cout << *(arr + i) << " ";
+        std::cout << *(arr + i) << " ";
     }
-    cout << endl;
+    std::cout << "\n";
 }
 
 //hàm sắp xếp mảng theo thứ tự tăng dần
@@ -51,7 +47,7 @@ void sort(int* arr, int size){
     for(int i = 0; i < size; i++){
         for (int j = size - 1; j > i ; j--) {
             if (*(arr + j) < *(arr + j - 1)){
-                swap(*(arr + j), *(arr + j - 1));
+                std::swap(*(arr + j), *(arr + j - 1));
             }
         }
     }
